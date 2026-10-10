@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+    <title>Primary 6 Review - Mr Mohamed Elshahawy</title>
+    <style>
+        :root {
+            --bg: #f0fdf4;
+            --card: #ffffff;
+            --tx: #1e293b;
+            --mu: #64748b;
+            --pr: #0284c7;
+            --pr-hover: #0369a1;
+            --ok: #16a34a;
+            --no: #dc2626;
+            --gold: #d97706;
+            --border: #cbd5e1;
+            box-sizing: border-box;
+            padding-top: env(safe-area-inset-top, 0px);
+            padding-bottom: env(safe-area-inset-bottom, 0px);
+        }
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--tx);
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+            width: 100%;
+            max-width: 480px;
+            margin: auto;
+            padding: 12px;
+        }
+        h1 { font-size: 22px; text-align: center; margin: 8px 0; font-weight: 800; color: #0284c7; }
+        p.s { text-align: center; color: var(--mu); margin: 0 0 16px; font-size: 15px; font-weight: 600; }
+        
+        .card {
+            background: var(--card);
+            border-radius: 20px;
+            padding: 18px 14px;
+            margin: 12px 0;
+            box-shadow: 0 8px 20px -4px rgba(14, 165, 233, 0.12);
+            border: 2px solid #e0f2fe;
+        }
+
+        /* Professional Header Card for Name & Phone */
+        .welcome-card {
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            color: #ffffff;
+            text-align: center;
+            border-radius: 20px;
+            padding: 22px 16px;
+            margin: 12px 0;
+            box-shadow: 0 10px 25px rgba(2, 132, 199, 0.25);
+            border: none;
+        }
+        .welcome-card .ayah {
+            font-size: 16px;
+            line-height: 2.2;
+            font-family: "Traditional Arabic", "Amiri", serif;
+            color: #fef08a;
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+        .teacher-name {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+            margin: 8px 0 4px;
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.15);
+        }
+        .teacher-phone {
+            font-size: 22px;
+            font-weight: 800;
+            direction: ltr;
+            letter-spacing: 1.5px;
+            color: #86efac;
+            background: rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            padding: 4px 16px;
+            border-radius: 30px;
+            margin-top: 6px;
+        }
+
+        button {
+            font: inherit;
+            cursor: pointer;
+            border: 0;
+            border-radius: 14px;
+            padding: 14px;
+            background: var(--pr);
+            color: #fff;
+            width: 100%;
+            margin: 6px 0;
+            font-weight: 700;
+            font-size: 16px;
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+        }
+        button:active { transform: scale(0.98); }
+        button.o {
+            background: #f8fafc;
+            color: var(--tx);
+            border: 2px solid var(--border);
+            text-align: left;
+            direction: ltr;
+            font-weight: 600;
+            box-shadow: none;
+        }
+        button.o:hover { border-color: var(--pr); background: #f0f9ff; }
+        button.ok { background: var(--ok) !important; color: #fff; border-color: var(--ok) !important; }
+        button.no { background: var(--no) !important; color: #fff; border-color: var(--no) !important; }
+        
+        .g { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .g button { margin: 0; padding: 16px 8px; font-size: 15px; }
+        .q { font-size: 19px; direction: ltr; text-align: left; margin: 14px 0; line-height: 1.5; font-weight: 700; color: #0f172a; word-break: break-word; }
+        
+        .bar { height: 10px; background: #e2e8f0; border-radius: 8px; overflow: hidden; margin-top: 6px; }
+        .bar i { display: block; height: 100%; background: linear-gradient(90deg, #38bdf8, #0284c7); border-radius: 8px; }
+        .top { display: flex; justify-content: space-between; color: var(--mu); font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+        
+        input {
+            font: inherit;
+            width: 100%;
+            padding: 14px;
+            border-radius: 14px;
+            border: 2px solid var(--border);
+            direction: ltr;
+            background: #f8fafc;
+            color: var(--tx);
+            outline: none;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        input:focus { border-color: var(--pr); background: #fff; }
+        
+        .fb { margin-top: 12px; font-weight: 700; text-align: center; font-size: 16px; }
+        .link { background: none; color: var(--mu); font-size: 14px; box-shadow: none; font-weight: 600; }
+        
+        .hd {
+            background: linear-gradient(135deg, #0284c7, #0369a1);
+            color: #fff;
+            font-weight: 800;
+            font-size: 17px;
+            padding: 16px;
+            margin: -12px -12px 16px;
+            direction: ltr;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.2);
+            text-align: center;
+        }
+        .gold { border: 3px solid #fde68a; text-align: center; background: linear-gradient(180deg, #fffbeb 0%, #ffffff 100%); }
+        
+        .wa {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            background: #16a34a;
+            color: #fff;
+            border-radius: 14px;
+            padding: 15px;
+            margin: 12px 0;
+            font-weight: 700;
+            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(22, 163, 74, 0.3);
+        }
+        .sc { font-size: 50px; font-weight: 900; color: #d97706; margin: 8px 0; }
+        input.nm { text-align: center; font-size: 18px; }
+        
+        .ans { min-height: 56px; border: 2px dashed #cbd5e1; border-radius: 14px; padding: 10px; display: flex; flex-wrap: wrap; gap: 6px; direction: ltr; margin-bottom: 14px; background: #f8fafc; }
+        .pool { display: flex; flex-wrap: wrap; gap: 6px; direction: ltr; margin-bottom: 10px; }
+        .tl { background: #0284c7; color: #fff; border-radius: 10px; padding: 8px 14px; font-size: 15px; cursor: pointer; font-weight: 700; }
+    </style>
+</head>
+<body>
+    <div class="hd">Primary 6 - Units 1 to 3 Review</div>
+    <div id="app"></div>
+    <script>
+        var MC_raw = "We ___ souvenirs from Khan El Khalili.#do/sell/buy/eat#2\n" +
+        "Tourists come to Egypt to ___ the ancient sites.#play/visit/have/read#1\n" +
+        "Carpenters ___ furniture in Damietta.#run/watch/write/make#3\n" +
+        "They spend a great day ___ Aswan.#of/in/off/from#1\n" +
+        "His family learns many new things about the Egyptian ___.#Stadium/Science/Museum/Math#2\n" +
+        "Ahmed ___ to school every day.#walk/walks/walked/walking#1\n" +
+        "Asmaa ___ us every week.#visits/visit/is visiting/visited#0\n" +
+        "The moon ___ round the earth.#go/went/goes/going#2\n" +
+        "Sama often ___ her homework at six.#do/does/done/doing#1\n" +
+        "I sometimes ___ the floor.#sweeps/sweep/swept/sweeping#1\n" +
+        "She always ___ her bed.#make/made/makes/making#2\n" +
+        "He never ___ to school late.#go/went/goes/going#2\n" +
+        "We always ___ football at seven on Friday.#play/plays/played/playing#0\n" +
+        "Every morning, Ahmed ___ a cup of tea.#drink/drank/drinks/drinking#2\n" +
+        "What time ___ you leave for school every day?#do/does/doing/did#0\n" +
+        "He never ___ tennis.#play/plays/playing/played#1\n" +
+        "She often ___ English.#study/studies/studying/studied#1\n" +
+        "The sun ___ us light.#gives/give/giving/gave#0\n" +
+        "I usually ___ stories at night.#read/reads/reading/am reading#0\n" +
+        "___ he visit you every day?#Do/Does/Doing/did#1\n" +
+        "I can climb the high ___.#river/way/mountain/lake#2\n" +
+        "___ are a kind of animals.#Tablets/Kangaroos/Shorts/Vets#1\n\n" +
+        "I like to ___ photos with my phone.#read/take/play/buy#1\n" +
+        "I ___ fresh food.#like/likes/liking/to like#0\n" +
+        "What are you ___?#do/does/doing/did#2\n" +
+        "Let's ___ the rubbish out.#read/take/play/buy#1\n" +
+        "He ___ rice very much.#like/likes/liking/to like#1\n" +
+        "What are you ___ now?#draw/drew/drawing/draws#2\n" +
+        "We ___ football every day.#play/plays/played/playing#0\n" +
+        "It ___ snows in summer in Egypt.#never/sometimes/often/ever#0\n" +
+        "I ___ out the weeds from the garden every morning.#pull/check/do/eat#0\n" +
+        "We help my grandpa ___ for the plants in his garden.#care/grow/take/have#0\n" +
+        "Every morning, I ___ for insects on the plants.#make/take/look/pay#2\n" +
+        "Grandpa ___ care of his plants every day.#does/has/takes/sells#2\n" +
+        "What is hibiscus used ___ in the family?#from/for/off/of#1\n" +
+        "When it's hot, people drink water and rest in the ___.#shade/sun/heat/dust#0\n" +
+        "I like looking at the high ___ in the sea.#stars/mountains/clouds/waves#3\n" +
+        "It is windy and the sky is full of dark ___.#waves/glasses/plants/clouds#3\n" +
+        "In ___ weather, people should drink a lot of water.#rainy/hot/cool/cold#1\n" +
+        "The streets are ___ because it is raining heavily.#dry/wet/dusty/rainy#1\n" +
+        "We wear hats to ___ ourselves from the sun.#heat/clean/grow/protect#3\n" +
+        "What are you ___, Nada?#do/does/did/doing#3\n" +
+        "I'm ___ for the football game.#practicing/practice/practiced/practices#0\n" +
+        "A ___ brings food or packages to places.#street cleaner/delivery person/nurse/doctor#1\n" +
+        "Water ___ make sure people get clean water.#teachers/doctors/engineers/farmers#2\n" +
+        "Mechanics fix ___.#vehicles/computers/televisions/bags#0\n" +
+        "The traffic officer helps people ___ the road.#make/cross/put/correct#1\n" +
+        "A ___ helps patients in emergencies.#paramedic/cleaner/policeman/student#0\n" +
+        "I went to the ___ to send a letter.#bank/library/museum/post office#3\n" +
+        "Clean the room by ___, Ali.#yourself/himself/herself/myself#0\n" +
+        "My favorite ___ is football.#sport/book/team/meal#0\n" +
+        "I am ___ in watching films.#interest/interested/interesting/interests#1\n" +
+        "___ are you doing now, Adham?#What/Where/How/Why#0\n" +
+        "A paramedic helps people in an ___.#school/emergency/shop/park#1\n" +
+        "A mechanic fixes ___.#clothes/vehicles/food/books#1\n" +
+        "A traffic officer helps people ___ the road.#make/cross/build/draw#1\n" +
+        "We use 'can' to talk about ___.#past/ability/place/time#1\n" +
+        "She is ___ to speak English well.#can/able/ability/be#1";
+
+        var GR_raw = "Ibrahim ___ (travel) to a different country every year.#travels\n" +
+        "___ (Does) Remas and Aseel go to work by bus?#Do\n" +
+        "Lama ___ (don't) study in the afternoon.#doesn't\n" +
+        "How ___ (do) Yossif get ready for the exam?#does\n" +
+        "Nada ___ (not) play tennis every day.#doesn't\n" +
+        "___ (Does) you usually watch football matches?#Do\n" +
+        "They always ___ (tidies) the kitchen for their mum.#tidy\n" +
+        "The club ___ (close) at 11:00 pm.#closes\n" +
+        "It is very cheap; it ___ (don't) cost much.#doesn't\n" +
+        "___ (Be) Omer happy now?#Is\n" +
+        "Aisha never ___ (drink) tea at night.#drinks\n" +
+        "Eman ___ (goes always) to work early.#always goes\n" +
+        "Mohamed ___ (play) tennis in the club now.#is playing\n" +
+        "___ (Do) you ___ (eat) your lunch at the moment? (write both words)#Are eating\n" +
+        "I ___ (not wear) my jacket. It's hot.#am not wearing\n" +
+        "My friend and I ___ (visit) London now.#are visiting\n" +
+        "Ahmed ___ (clean) his room right now.#is cleaning\n" +
+        "The sun ___ (shine) brightly today.#is shining\n" +
+        "She ___ (close) the window because it's raining.#is closing\n" +
+        "Nora ___ (not study) for the test. She is watching TV.#isn't studying\n" +
+        "Are the birds ___ (fly) in the sky?#flying\n" +
+        "Why ___ (do) they not revising hard?#are\n" +
+        "We ___ (celebrate) my sister's birthday tonight.#are celebrating\n" +
+        "___ (Do) your aunts visiting you tonight?#Are\n" +
+        "He ___ (water) the flowers in the garden at the moment.#is watering\n" +
+        "She ___ (not can) walk to school.#can't\n" +
+        "I am ___ (able) run fast.#able to\n" +
+        "___ (Can't) they do the research? - Yes, they can.#Can\n" +
+        "___ (Do) they able to tidy the flat?#Are\n" +
+        "She ___ (not can) help her community alone.#can't\n" +
+        "They are ___ (able) solve the problem.#able to\n" +
+        "___ (Can) you help your neighbors?#Can\n" +
+        "He ___ (work) as a mechanic in the city.#works\n" +
+        "We ___ (not waste) water every day.#don't waste\n\n" +
+        "She is ___ (able) ride a bike safely.#able to\n" +
+        "The traffic officer ___ (help) people every day.#helps\n" +
+        "They ___ (make) posters to help the community.#make";
+
+        var RE_raw = "We water plants every day.|Every day we water plants.\n" +
+        "Farmers grow many fruits.\n" +
+        "I check insects on the plants.\n" +
+        "Cairo is warm and sunny.|Cairo is sunny and warm.\n" +
+        "Farmers water plants early in the morning.|Farmers water plants in the morning early.\n" +
+        "The Nile is the longest river in the world.\n" +
+        "Farmers grow food in good soil.\n" +
+        "Ancient Egyptians built temples near the river.\n" +
+        "They left school early in the morning.\n" +
+        "They rode the bus for two hours.\n" +
+        "They visited the desert after lunch.\n" +
+        "They saw a fossil museum.\n" +
+        "My camera was not with me.\n" +
+        "Mr. Ahmed found it under the bench.\n" +
+        "We can play tennis outside.\n" +
+        "She is able to draw beautifully.";
+
+        const MC = MC_raw.split("\n").map(l => { let parts = l.split("#"); return { q: parts[0], o: parts[1] ? parts[1].split("/") : [], a: +(parts[2] || 0) }; });
+        const GR = GR_raw.split("\n").map(l => { let parts = l.split("#"); return { q: parts[0], a: parts[1] || "" }; });
+        const RE = RE_raw.split("\n").map(l => ({ a: l }));
+
+        const norm = s => s.toLowerCase().replace(/[’‘`]/g, "'").replace(/does not/g, "doesn't").replace(/do not/g, "don't").replace(/cannot/g, "can't").replace(/[.!]$/, "").replace(/\s+/g, " ").trim();
+        const $ = document.getElementById("app");
+        let S = {};
+        let NAME = "";
+
+        function welcome() {
+            $.innerHTML = 
+                '<div class="welcome-card">' +
+                    '<div class="ayah">إن الله وملائكته يصلون على النبي يا أيها الذين آمنوا صلوا عليه وسلموا تسليما</div>' +
+                    '<div class="teacher-name">Mr Mohamed Elshahawy</div>' +
+                    '<div class="teacher-phone">01277924562</div>' +
+                '</div>' +
+                '<p class="s" style="font-size:16px;color:var(--tx); margin-top:16px;">أهلاً بك يا بطل! اكتب اسمك للبدء:</p>' +
+                '<input id="nm" class="nm" placeholder="اكتب اسمك هنا..." autocomplete="off">' +
+                '<div style="text-align:center"><button style="width:auto;padding:12px 40px;margin-top:14px" onclick="go()">ابدأ الآن 🚀</button></div>';
+        }
+
+        function go() {
+            let v = document.getElementById("nm").value.trim();
+            if (!v) {
+                document.getElementById("nm").style.borderColor = "var(--no)";
+                return;
+            }
+            NAME = v;
+            home();
+        }
+
+        function home() {
+            if (!NAME) return welcome();
+            $.innerHTML = 
+                '<h1>🎮 Primary 6 - Units 1 to 3</h1>' +
+                '<p class="s">اختر نوع التحدي للبدء</p>' +
+                '<div class="card"><h3>🔤 تحديات الكلمات</h3><p class="s">Choose the correct answer</p>' + grid("mc", MC.length) + '</div>' +
+                '<div class="card"><h3>✏️ تحديات الجرامر</h3><p class="s">Write the correct form</p>' + grid("gr", GR.length) + '</div>' +
+                '<div class="card"><h3>🧩 تحديات ترتيب الجمل</h3><p class="s">Rearrange the words</p>' + grid("re", RE.length) + '</div>';
+        }
+
+        function grid(t, n) {
+            let h = '<div class="g">';
+            for (let i = 0; i < Math.ceil(n / 20); i++) {
+                let a = i * 20 + 1, b = Math.min(n, a + 19);
+                h += '<button onclick="start(\'' + t + '\', ' + i + ')">تحدي ' + (i + 1) + '<br><small style="color:#0369a1; font-weight:700;">' + a + '–' + b + '</small></button>';
+            }
+            return h + "</div>";
+        }
+
+        function start(t, i) {
+            let d = { mc: MC, gr: GR, re: RE }[t];
+            S = { t: t, i: i, qs: d.slice(i * 20, i * 20 + 20), n: 0, sc: 0, done: false, tl: null, u: [] };
+            show();
+        }
+
+        function tok(a) {
+            return a.split("|")[0].replace("able to", "able_to").replace(/\.$/, "").split(" ");
+        }
+
+        function head() {
+            return '<div class="top"><span>سؤال ' + (S.n + 1) + '/' + S.qs.length + '</span><span>⭐ ' + S.sc + '</span></div><div class="bar"><i style="width:' + ((S.n / S.qs.length) * 100) + '%"></i></div>';
+        }
+
+        function show() {
+            let q = S.qs[S.n];
+            if (S.t == "re") return showRe();
+            let h = head() + '<div class="card"><div class="q">' + q.q.replace("___", "<b>_____</b>") + '</div>';
+            if (S.t == "mc") {
+                for (let i = 0; i < q.o.length; i++) {
+                    let lettr = "abcd"[i];
+                    h += '<button class="o" onclick="pick(' + i + ')">' + lettr + '. ' + q.o[i] + '</button>';
+                }
+            } else {
+                h += '<input id="in" autocomplete="off" autocapitalize="off" placeholder="اكتب إجابتك هنا..."><button onclick="chk()">تأكيد ✔️</button>';
+            }
+            $.innerHTML = h + '<div id="fb" class="fb"></div></div>';
+            let e = document.getElementById("in");
+            if (e) e.onkeydown = function(k) { if (k.key == "Enter") chk(); };
+        }
+
+        function showRe() {
+            let q = S.qs[S.n];
+            if (!S.tl) {
+                S.tl = tok(q.a).map(function(w) { return [w, Math.random()]; }).sort(function(x, y) { return x[1] - y[1]; }).map(function(x) { return x[0]; });
+                S.u = [];
+            }
+            var t_func = function(w) { return w.replace("_", " "); };
+            var ansHtml = "";
+            for (let idx = 0; idx < S.u.length; idx++) {
+                ansHtml += '<span class="tl" onclick="rm(' + S.u[idx] + ')">' + t_func(S.tl[S.u[idx]]) + '</span>';
+            }
+            if (!ansHtml) ansHtml = '<small style="color:var(--mu)">اضغط على الكلمات بالترتيب الصحيح</small>';
+
+            var poolHtml = "";
+            for (let idx = 0; idx < S.tl.length; idx++) {
+                if (!S.u.includes(idx)) {
+                    poolHtml += '<span class="tl" onclick="ad(' + idx + ')">' + t_func(S.tl[idx]) + '</span>';
+                }
+            }
+
+            $.innerHTML = head() + 
+                '<div class="card">' +
+                    '<p class="s">رتّب الكلمات لتكوين جملة صحيحة</p>' +
+                    '<div class="ans" id="ar">' + ansHtml + '</div>' +
+                    '<div class="pool">' + poolHtml + '</div>' +
+                    '<button onclick="chkRe()">تأكيد ✔️</button>' +
+                    '<div id="fb" class="fb"></div>' +
+                '</div>';
+        }
+
+        function ad(i) { if (S.done) return; S.u.push(i); showRe(); }
+        function rm(i) { if (S.done) return; S.u = S.u.filter(function(x) { return x != i; }); showRe(); }
+        
+        function chkRe() {
+            if (S.done) return;
+            let q = S.qs[S.n];
+            let selectedWords = S.u.map(function(i) { return S.tl[i]; }).join(" ").replace(/_/g, " ");
+            let g = norm(selectedWords);
+            fin(q.a.split("|").some(function(x) { return norm(x) == g; }), q.a.split("|")[0]);
+        }
+
+        function fin(ok, ans) {
+            if (S.done) return;
+            S.done = true;
+            if (ok) S.sc++;
+            let msg = ok ? '<span style="color:var(--ok)">✅ بطل ممتاز! إجابة صحيحة</span>' : '<span style="color:var(--no)">❌ خطأ — الإجابة: <b dir="ltr">' + ans + '</b></span>';
+            document.getElementById("fb").innerHTML = msg + '<button style="margin-top:10px;" onclick="nxt()">السؤال التالي ➡️</button>';
+        }
+
+        function pick(i) {
+            if (S.done) return;
+            let q = S.qs[S.n];
+            let btns = document.querySelectorAll(".o");
+            for (let j = 0; j < btns.length; j++) {
+                if (j == q.a) btns[j].classList.add("ok");
+                else if (j == i) btns[j].classList.add("no");
+            }
+            fin(i == q.a, q.o[q.a]);
+        }
+
+        function chk() {
+            if (S.done) return;
+            let q = S.qs[S.n], v = document.getElementById("in");
+            let ok = q.a.split("|").some(function(x) { return norm(x) == norm(v.value); });
+            v.style.borderColor = ok ? "var(--ok)" : "var(--no)";
+            v.disabled = true;
+            fin(ok, q.a);
+        }
+
+        function nxt() {
+            S.done = false; S.tl = null; S.n++;
+            if (S.n < S.qs.length) show();
+            else end();
+        }
+
+        function end() {
+            let pc = Math.round((S.sc / S.qs.length) * 100);
+            let tpNames = { mc: "Word Challenges", gr: "Grammar Challenges", re: "Rearrange Challenges" };
+            let tp = tpNames[S.t] + " - Challenge " + (S.i + 1);
+            let msg = pc >= 90 ? "أنت بطل خارق! 🏆" : pc >= 60 ? "ممتاز جداً! 👏" : "حاول مرة أخرى، يمكنك الإبضاع! 📚";
+            let waText = "Primary 6 - Units 1 to 3 Review\nName: " + NAME + "\nTopic: " + tp + "\nScore: " + S.sc + "/" + S.qs.length + " (" + pc + "%)";
+            let wa = "https://wa.me/201277924562?text=" + encodeURIComponent(waText);
+            
+            $.innerHTML = 
+                '<div class="card gold">' +
+                    '<div class="sc">' + S.sc + '/' + S.qs.length + '</div>' +
+                    '<h3 style="font-size:20px; color:#d97706;">' + pc + '% — ' + msg + '</h3>' +
+                    '<p class="s">' + NAME + '<br>' + tp + '</p>' +
+                '</div>' +
+                '<a class="wa" href="' + wa + '" target="_blank" rel="noopener">📲 مشاركة النتيجة عبر واتساب</a>' +
+                '<button onclick="start(\'' + S.t + '\', ' + S.i + ')">🔁 حاول مرة أخرى</button>' +
+                '<button class="link" onclick="home()">اختر موضوعاً آخر</button>';
+        }
+
+        welcome();
+    </script>
+</body>
+</html>
