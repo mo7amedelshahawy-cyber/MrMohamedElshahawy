@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+    <title>Prep 1 Review - Mr Mohamed Elshahawy</title>
+    <style>
+        :root {
+            --bg: #f0fdf4;
+            --card: #ffffff;
+            --tx: #1e293b;
+            --mu: #64748b;
+            --pr: #0284c7;
+            --pr-hover: #0369a1;
+            --ok: #16a34a;
+            --no: #dc2626;
+            --gold: #d97706;
+            --border: #cbd5e1;
+            box-sizing: border-box;
+            padding-top: env(safe-area-inset-top, 0px);
+            padding-bottom: env(safe-area-inset-bottom, 0px);
+        }
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--tx);
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+            width: 100%;
+            max-width: 480px;
+            margin: auto;
+            padding: 12px;
+        }
+        h1 { font-size: 22px; text-align: center; margin: 8px 0; font-weight: 800; color: #0284c7; }
+        p.s { text-align: center; color: var(--mu); margin: 0 0 16px; font-size: 15px; font-weight: 600; }
+        
+        .card {
+            background: var(--card);
+            border-radius: 20px;
+            padding: 18px 14px;
+            margin: 12px 0;
+            box-shadow: 0 8px 20px -4px rgba(14, 165, 233, 0.12);
+            border: 2px solid #e0f2fe;
+        }
+
+        .welcome-card {
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            color: #ffffff;
+            text-align: center;
+            border-radius: 20px;
+            padding: 22px 16px;
+            margin: 12px 0;
+            box-shadow: 0 10px 25px rgba(2, 132, 199, 0.25);
+            border: none;
+        }
+        .welcome-card .ayah {
+            font-size: 15px;
+            line-height: 2.2;
+            font-family: "Traditional Arabic", "Amiri", serif;
+            color: #fef08a;
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+        .teacher-name {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+            margin: 8px 0 4px;
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.15);
+        }
+        .teacher-phone {
+            font-size: 22px;
+            font-weight: 800;
+            direction: ltr;
+            letter-spacing: 1.5px;
+            color: #86efac;
+            background: rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            padding: 4px 16px;
+            border-radius: 30px;
+            margin-top: 6px;
+        }
+
+        button {
+            font: inherit;
+            cursor: pointer;
+            border: 0;
+            border-radius: 14px;
+            padding: 14px;
+            background: var(--pr);
+            color: #fff;
+            width: 100%;
+            margin: 6px 0;
+            font-weight: 700;
+            font-size: 16px;
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+        }
+        button:active { transform: scale(0.98); }
+        button.o {
+            background: #f8fafc;
+            color: var(--tx);
+            border: 2px solid var(--border);
+            text-align: left;
+            direction: ltr;
+            font-weight: 600;
+            box-shadow: none;
+        }
+        button.o:hover { border-color: var(--pr); background: #f0f9ff; }
+        button.ok { background: var(--ok) !important; color: #fff; border-color: var(--ok) !important; }
+        button.no { background: var(--no) !important; color: #fff; border-color: var(--no) !important; }
+        
+        .g { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .g button { margin: 0; padding: 16px 8px; font-size: 15px; }
+        .q { font-size: 19px; direction: ltr; text-align: left; margin: 14px 0; line-height: 1.5; font-weight: 700; color: #0f172a; word-break: break-word; }
+        
+        .bar { height: 10px; background: #e2e8f0; border-radius: 8px; overflow: hidden; margin-top: 6px; }
+        .bar i { display: block; height: 100%; background: linear-gradient(90deg, #38bdf8, #0284c7); border-radius: 8px; }
+        .top { display: flex; justify-content: space-between; color: var(--mu); font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+        
+        input {
+            font: inherit;
+            width: 100%;
+            padding: 14px;
+            border-radius: 14px;
+            border: 2px solid var(--border);
+            direction: ltr;
+            background: #f8fafc;
+            color: var(--tx);
+            outline: none;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        input:focus { border-color: var(--pr); background: #fff; }
+        
+        .fb { margin-top: 12px; font-weight: 700; text-align: center; font-size: 16px; }
+        .link { background: none; color: var(--mu); font-size: 14px; box-shadow: none; font-weight: 600; }
+        
+        .hd {
+            background: linear-gradient(135deg, #0284c7, #0369a1);
+            color: #fff;
+            font-weight: 800;
+            font-size: 17px;
+            padding: 16px;
+            margin: -12px -12px 16px;
+            direction: ltr;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.2);
+            text-align: center;
+        }
+        .gold { border: 3px solid #fde68a; text-align: center; background: linear-gradient(180deg, #fffbeb 0%, #ffffff 100%); }
+        
+        .wa {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            background: #16a34a;
+            color: #fff;
+            border-radius: 14px;
+            padding: 15px;
+            margin: 12px 0;
+            font-weight: 700;
+            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(22, 163, 74, 0.3);
+        }
+        .sc { font-size: 50px; font-weight: 900; color: #d97706; margin: 8px 0; }
+        input.nm { text-align: center; font-size: 18px; }
+        
+        .ans { min-height: 56px; border: 2px dashed #cbd5e1; border-radius: 14px; padding: 10px; display: flex; flex-wrap: wrap; gap: 6px; direction: ltr; margin-bottom: 14px; background: #f8fafc; }
+        .pool { display: flex; flex-wrap: wrap; gap: 6px; direction: ltr; margin-bottom: 10px; }
+        .tl { background: #0284c7; color: #fff; border-radius: 10px; padding: 8px 14px; font-size: 15px; cursor: pointer; font-weight: 700; }
+        .pas{direction:ltr;text-align:left;font-size:17px;line-height:2.2;margin:12px 0}
+        .bl{display:inline-block;min-width:90px;text-align:center;border-bottom:2px dashed var(--gold);color:var(--gold);font-weight:700;cursor:pointer;padding:0 6px}
+        .bl.ok{color:var(--ok)}.bl.no{color:var(--no)}.sel{outline:3px solid var(--gold)}
+    </style>
+</head>
+<body>
+    <div class="hd">Prep 1 - Units 1 & 2 Revision</div>
+    <div id="app"></div>
+    <script>
+        const MC_raw = [
+            "I use my ___ camera to take nice photos.#funny/long/digital/tasty#2",
+            "Solyman plays ___ with friends on the internet after school.#online games/physical tools/technology/night mode#0",
+            "You don't have any food! We can ___ our lunch together.#protect/share/remind/stop#1",
+            "I like to ___ my social media before bedtime.#type/grow/protect/check#3",
+            "You need to ___ a break every two hours to rest your eyes.#make/see/take/play#2",
+            "Reem can type 40 words ___ minute.#at/off/per/for#2",
+            "Malak's drawing was ___. We all loved it.#bad/amazing/delicious/hot#1",
+            "My phone is my favorite ___. I use it every day.#device/app/website/machine#0",
+            "It's my ___ to read a short story before bedtime.#habit/board/picture/setting#0",
+            "A ___ is a darker screen setting to protect your eyes in low light.#night mode/day mode/smartboard/blog#0",
+            "Earth is the ___ where we all live.#island/plant/plane/planet#3",
+            "We can ___ for better books online. We don't need to ask the teacher.#share/type/search/say#2",
+            "Can you help me ___ my homework?#for/with/at/on#1",
+            "My advice is to spend money ___ on important things.#carefully/wisely/happily/sadly#1",
+            "The physical ___ must be used safely.#modes/tools/games/technology#1",
+            "A/An ___ is a page on the internet that gives information or lets you do things online.#website/icon/email/location#0",
+            "The ___ story kept us excited until the end.#adventure/light/boring/video#0",
+            "Can you ___ this message for me?#remind/protect/help/type#3",
+            "Our teacher writes on the ___ with a special pen for it.#smartboard/desk/table/laptop#0",
+            "Digital means something that uses numbers and ___.#amounts/pictures/photography/technology#3",
+            "We must ___ our environment from pollution.#protect/search/share/type#0",
+            "A ___ is a portable computer.#smartboard/speaker/screen/laptop#3",
+            "Food gives our body ___ to play, so we need to eat healthy food.#electricity/water/energy/oil#2",
+            "The ___ uses both electricity and diesel. It's good for the environment.#bike/hybrid bus/smartphone/ancient bus#1",
+            "The school ___ helps teachers share lessons.#energy/content/wall/platform#3",
+            "We will ___ our website next week. It'll be ready soon.#listen/carry/launch/affect#2",
+            "Exercise is my ___ routine. I do it every day.#monthly/weekly/whole/daily#3",
+            "Zahraa was late ___ school yesterday. Her teacher was so angry.#at/for/in/to#1",
+            "The ___ of this book is very interesting. All the students like it.#content/email/energy/cure#0",
+            "My ___ today was only one hour. I shouldn't use my mobile phone for too long.#topic/smartphone/screen time/social media#2",
+            "We use social media to ___ our friends and watch funny videos on the internet.#aim for/think about/share with/chat with#3",
+            "We must ___ the amount of pollution to live in a clean environment.#reuse/disappear/reduce/produce#2",
+            "Children need to ___ the use of digital devices with other activities.#share/balance/produce/think#1",
+            "The use of green transportation supports Egypt's ___ 2030 for clean, smart cities.#Action/Promise/Vision/Passion#2",
+            "I use a ___ to click on things on my computer.#keyboard/printer/mouse/speaker#2",
+            "Most young people use ___ when they listen to music.#a keyboard/a printer/headphones/a microphone#2",
+            "You must work hard to ___ your task on time.#choose/lose/achieve/stop#2",
+            "Our teacher spoke into the ___, so we could hear her.#printer/webcam/mouse/microphone#3",
+            "Clever students like to ___ the important lessons to listen to them later.#print/type/record/name#2",
+            "Our ___ is to make a poster about using digital devices wisely.#printer/assignment/development/worker#1",
+            "My dad taught me how to ___ a video call using the family tablet.#make/achieve/do/name#0",
+            "My sister prepared a great presentation ___ her school's show.#under/with/from/for#3",
+            "My first ___ today is writing a paragraph.#task/speaker/tusk/music#0",
+            "A ___ is used for typing.#webcam/speaker/keyboard/mouse#2",
+            "My father's ___ makes very clear pages.#printer/headphones/webcam/keyboard#0",
+            "I usually use a ___ for my online video call.#speaker/mouse/webcam/printer#2",
+            "Noha bought a portable ___ to take on her trip. She likes listening to music.#letter/command/sound/music player#3",
+            "A ___ neighbor can make a big difference in your community.#friendly/complex/lazy/daily#0",
+            "I usually walk for about 30 minutes every day. It's my daily ___.#letter/sound/routine/command#2",
+            "The teacher gave a ___ to the students to start their test.#letter/sound/command/routine#2",
+            "Please write ___ to your cousin Rayan who sent you a birthday card last week.#down/back/up/over#1",
+            "Every evening, Sarah needs to ___ online to check her school assignments before bedtime.#put/make/take/go#3",
+            "The question was easy. It's ___.#complex/difficult/simple/daily#2",
+            "On the school trip, all students will ___ breakfast together in the hotel dining room.#go/do/have/make#2",
+            "Every morning, Nour needs thirty minutes to ___ ready for school.#make/get/do/have#1",
+            "Amina forgot to reply ___ her friend's message yesterday.#to/with/for/on#0",
+            "The ___ of the birds singing in the morning is lovely.#command/sound/letter/routine#1",
+            "Reading funny stories before bedtime is ___ and helps children sleep better.#enjoyable/neat/auditory/physical#0",
+            "Young children learn better when they ___ hands-on activities daily.#do/make/hear/smell#0",
+            "This activity is auditory; it's related to ___ things.#seeing/hearing/touching/smelling#1",
+            "Salma draws colorful ___ to help her remember all the parts of a story.#examples/passion/problems/mind maps#3",
+            "To ___ is to arrange something in a particular order or system.#realize/recognize/memorize/organize#3",
+            "Hassan prefers ___ books with lots of pictures instead of books with only words.#silent/auditory/oral/visual#3",
+            "Nour prefers ___ stories on the radio because she likes to listen while she draws.#visual/auditory/kinesthetic/video#1",
+            "That ___ bird only comes to our garden in the early morning.#particular/physical/kinesthetic/private#0",
+            "Let's ___ the chairs in a circle so everyone can see each other.#happen/appear/arrange/discuss#2",
+            "The teacher showed us a new ___ for solving difficult math problems quickly.#journey/problem/expression/method#3",
+            "Life is a long ___ where we learn something new every day.#sight/solution/journey/body#2",
+            "Yasmin is a ___ learner who needs to move around and touch things to understand.#kinesthetic/visual/auditory/oral#0",
+            "Mom bought ___ flowers from the market to make our house look pretty and bright.#visual/colorful/physical/auditory#1",
+            "Mom likes the kitchen to be ___ so we put all the dishes away after eating.#noisy/auditory/neat/colorful#2",
+            "My ___ is different from my sister's because I like to read quietly.#sight/example/learning style/hairstyle#2",
+            "Mr El-Mogy gave an easy ___ of why the sun looks bigger than other stars.#journey/problem/expression/explanation#3",
+            "Running and jumping are ___ activities that make our bodies strong and healthy.#physical/auditory/visual/neat#0",
+            "Bright colors ___ young children who like cheerful and happy things.#touch/suit/prefer/answer#1",
+            "This activity is related ___ learning about healthy food choices.#to/in/on/with#0",
+            "Students learned to ___ charts showing their favorite foods.#eat/cook/buy/make#3",
+            "The teacher asked Hana to ___ the new words out loud.#draw/write/repeat/think#2",
+            "The children learned to ___ different birds by looking at their colors and sizes.#identify/eat/run/fly#0",
+            "We need to ___ the books in the library by putting them in alphabetical order.#discuss/organize/touch/send#1",
+            "I always ___ my lessons before an exam.#try/review/find/avoid#1",
+            "Reading every day can ___ your vocabulary and spelling.#appear/try/improve/answer#2",
+            "Basmala ___ talking to strangers because she is shy.#improves/practices/avoids/reviews#2",
+            "I wake up early to get ready ___ school.#for/to/with/at#0",
+            "I made a small ___ in my spelling test.#distraction/lab/mistake/goal#2",
+            "My brother's ___ is to become a good doctor.#lab/goal/sleep/exam#1",
+            "Our school is having a reading ___ next week.#sleep/solution/competition/completion#2",
+            "My sister practices the piano ___ every evening.#regular/while/far/regularly#3",
+            "Basma ___ on her reading to finish the book early.#focused/reviewed/expressed/avoided#0",
+            "Mr. Waleed used a smart ___ for solving puzzles.#lab/technique/vocabulary/road#1",
+            "I write new words in my ___ notebook.#exam/goal/vocabulary/oral#2",
+            "The teacher liked my ___ story about a talking dog in space.#creative/creation/boring/excited#0",
+            "I want to ___ my speaking skill before the class presentation.#appear/communicate/enjoy/develop#3",
+            "Camping with my family was the best ___ I had this year.#experiment/opinion/experience/scale#2",
+            "It's important to ___ your feelings when you are upset or happy.#communicate/express/enjoy/develop#1",
+            "We made a colorful ___ to tell others about our school event.#advertisement/opinion/skill/experience#0",
+            "One ___ of teamwork is sharing different skills.#experiment/leadership/communication/benefit#3",
+            "Football is a/an ___ sport where players work together to win.#personal/team/program/individual#1",
+            "We use email to communicate ___ our teacher, Mr Mohammed.#for/on/with/about#2",
+            "The teacher asked us to ___ opinions in pairs before writing.#call/charge/share/appear#2",
+            "After lots of practice, I felt ___ about doing my class presentation.#old/tiny/modern/confident#3",
+            "To be a good ___, you need to ask lots of questions.#walker/thinker/benefit/media#1",
+            "The news was shared on all types of ___.#media/spidergram/models/medals#0",
+            "Cooperation between friends can help solve big problems faster.#Advertisement/Cooperation/Spidergram/Operation#1",
+            "We ___ focus better when we have a goal.#can't/can/isn't/is#1",
+            "Layla ___ an app to learn words at the moment.#is using/was using/used/uses#0",
+            "They ___ answer the questions because they are difficult.#can/are/can't/is#2",
+            "Ghada ___ revising for the English exam.#can/are/can't/is#3",
+            "You can take a deep ___ to feel relaxed.#breath/price/key/sign#0",
+            "My greatest ___ is to be a famous scientist.#kindness/ambition/unity/information#1",
+            "To reach her dreams, Marwa learned to ___ a step each day.#sleep/take/rest/nap#1",
+            "Sarah's parents are very proud ___ her for winning the art competition.#with/of/at/for#1",
+            "Don't ___ practicing the piano just because it seems hard now.#whisper/add/cross/quit#3",
+            "Hadeer is ___ of dogs. She runs when she sees a dog.#full/scared/brave/angry#1",
+            "We should always ___ our teachers and listen to their advice.#respect/refuse/quit/hesitate#0",
+            "To ___ is speak very quietly using your breath.#desire/refuse/hesitate/whisper#3",
+            "The teacher helped us with our ___ in class to speak fluently.#sense/semester/voice/pronunciation#3",
+            "We need a good ___ for our school project.#plane/game/plan/sound#2",
+            "The teacher asked us to make a ___ about ourselves.#game/profile/sound/picture#1",
+            "The ___ made it easy to understand the lesson.#beauty/gram/diagram/semester#2"
+        ];
+
+        const GR_raw = [
+            "I use my tablet to do homework. (often)#I often use my tablet to do homework.",
+            "I take my cell phone to school. (never)#I never take my cell phone to school.",
+            "I check my emails in the morning. (always)#I always check my emails in the morning.",
+            "Ali doesn't play online games at all. (never)#Ali never plays online games.",
+            "My brother has a habit to clean his room every Friday. (usually)#My brother usually cleans his room every Friday.",
+            "He goes to the library twice a week. (How often)#How often does he go to the library?",
+            "She doesn't help her mother. (They)#They don't help their mother.",
+            "It's their habit to arrive on time. (usually)#They usually arrive on time.",
+            "I visit my grandma on Fridays. (every)#I visit my grandma every Friday.",
+            "It's Nabil's habit to speak English in class. (always)#Nabil always speaks English in class.",
+            "Adham is playing games now. (always)#Adham always plays games.",
+            "Children are playing in the park. (usually)#Children usually play in the park.",
+            "I go to the local park from time to time. (sometimes)#I sometimes go to the local park.",
+            "He never makes noise. (doesn't)#He doesn't make noise.|He doesn't make any noise.",
+            "I use the computer in my science class. (sometimes)#I sometimes use the computer in my science class.",
+            "He uses his tablet for homework. (often)#He often uses his tablet for homework.",
+            "I watch videos on my phone. (usually)#I usually watch videos on my phone.",
+            "Salma doesn't watch TV at night at all. (never)#Salma never watches TV at night.",
+            "He goes to school every day. (How often)#How often does he go to school?",
+            "My uncle lives in the U.S.A. (Where)#Where does your uncle live?|Where does my uncle live?|Where does he live?",
+            "I get better step by step. (these days)#I am getting better these days.",
+            "I am able to answer these questions because they are easy. (can)#I can answer these questions because they are easy.",
+            "We plant flowers in the garden. (right now)#We are planting flowers in the garden right now.",
+            "Huda is able to solve difficult sums. (can)#Huda can solve difficult sums.",
+            "They clean their room every morning. (now)#They are cleaning their room now.",
+            "He isn't able to play well. (can't)#He can't play well.",
+            "The teacher writes the homework on the whiteboard. (writing)#The teacher is writing the homework on the whiteboard.",
+            "Farah isn't able to draw in the art class. (can't)#Farah can't draw in the art class.",
+            "We do experiments in the lab. (at the moment)#We are doing experiments in the lab at the moment.",
+            "The students revise for the exams. (now)#The students are revising for the exams now.",
+            "He researches information on the internet. (right now)#He is researching information on the internet right now.",
+            "Amira has the ability to teach us English. (can)#Amira can teach us English.",
+            "My father organizes his work by using charts. (at this moment)#My father is organizing his work by using charts at this moment.",
+            "He has the ability to repair his devices. (can)#He can repair his devices.",
+            "He doesn't speak English well. (can't)#He can't speak English well.",
+            "The players practice well for the match. (practicing)#The players are practicing well for the match.",
+            "Ibrahim has the ability to solve math problems quickly. (can)#Ibrahim can solve math problems quickly.",
+            "Reem eats a burger every Friday. (now)#Reem is eating a burger now.",
+            "Walid is writing in his notebook right now. (What)#What is Walid writing in his notebook right now?|What is Walid writing right now?|What is Walid doing right now?|What is Walid writing in his notebook?"
+        ];
+
+        const FI_raw = [
+            "ebook,tools,check,tablet,camera|check,ebook,tablet,tools|I enjoy my digital life! Every morning, I {1} the weather using my favorite device. At school, we sometimes read a/an {2} instead of a paper book. At home, I use my {3} to play games. But I still like using physical {4} like pencils and paper when I draw. It's fun to mix both ways.",
+            "use,keyboard,laptop,learn,ebooks|laptop,ebooks,learn,use|I think technology is amazing. I'm learning to use it wisely. I use my {1} to do homework, read {2}, and join video calls for lessons. Technology helps me {3} in different ways. It's useful when we {4} it well.",
+            "news,reply,online,check,different|check,reply,news,online|I want to tell you about my digital day. When I get up, I always {1} my phone. I read messages from my friends and {2} to them. Then, I have breakfast while I use my tablet to search for the latest {3}. At school, teachers usually use a smart board to help us learn well. After school, I often go {4} searching for information for homework.",
+            "devices,content,hybrid,smartphone,tails|content,hybrid,devices,smartphone|My teacher launched a fun new platform where we share stories. I uploaded my own {1} yesterday. After school, I watched a video about the {2} bus. It was really interesting. I learned that wasting energy can hurt the world. We should use {3} that help, not harm. I will also try to sleep early and not spend time on my {4} late at night.",
+            "headphones,devices,keyboard,mouse,printer|keyboard,headphones,printer,devices|At school I did my tasks well. I used my {1} to type answers in my workbook. Later, I listened to music with my {2} during break. I needed to finish a small assignment before lunch. At the end of the day, I used the {3} to print my science project. I think digital {4} help me achieve more in less time.",
+            "headphones,microphone,printer,digital,achieve|microphone,headphones,achieve,digital|Today, I had to record a poem I wrote. I used the {1} and read it slowly. Then I listened again with my {2}. I had to repeat it until it was clear. This assignment helped me {3} a task for English class. I sent the file to my teacher using a {4} device on the school site.",
+            "magical,mystery,announcement,proud,shy|announcement,magical,mystery,proud|In the cheerful school, the children were eager to learn. Mr. Adam made an exciting {1} about a new adventure. Everyone was curious and couldn't wait. When the glowing door appeared, they walked through it. Inside, {2} puzzles floated in the air. The group showed responsibility and worked hard. They solved the first {3} using clues. With teamwork, they smiled and felt {4} of their ability to succeed.",
+            "at,of,suits,colorful,maps|colorful,maps,suits,at|Nour is a visual learner. She likes to use a neat notebook with {1} drawings. When she sees charts or mind {2}, she remembers things better. Her teacher helps her organize her ideas. Nour says this method {3} her because it helps her study in order. She enjoys sitting {4} the front of the class to see everything clearly.",
+            "repeats,auditory,thinks,enjoyable,space|auditory,repeats,space,enjoyable|Omar learns best when he hears the lesson. He is an {1} learner. He likes to talk with his teacher and discuss problems with friends. When he {2} words out loud, he understands more. His study {3} is quiet and peaceful. He once answered a hard question after hearing a great explanation. That made his journey of learning {4}.",
+            "physical,do,think,kinesthetic,build|kinesthetic,build,do,physical|Leila learns by doing things by herself. She is a {1} learner. She prefers to touch things and {2} models. Her favorite lesson is when they {3} hands-on activities in science. She likes to take short breaks and move her body during study. This {4} method helps her stay active. She also likes to draw to solve problems that happen in math.",
+            "mistake,hard,for,at,lab|hard,mistake,lab,for|Omar had a science exam this week, and he was nervous. He studied {1} every night and wrote notes to help him. At first, he made a {2}, but his teacher explained the idea again. Omar visited the school {3} to do the experiment himself. Later, he found a smart solution online. He wants to be successful, so he always tries to revise {4} tests early.",
+            "doing,making,with,confident,benefit|benefit,confident,doing,with|Learning with others can be exciting! In group learning, you often enjoy working on fun tasks. One {1} is that you get to share opinions and hear new ideas. You may feel more {2} when you work in a team. I once watched a program on TV showing kids {3} a school project together. They looked so happy and creative. They really knew how to communicate {4} each other.",
+            "focus,regularly,goal,cooperation,distraction|distraction,focus,regularly,goal|Sara wanted to study, but there was too much {1} at home. Her baby brother was crying loudly. She went to another room to {2} better. She also found a great memory technique on a school website. Now she studies {3}, even on weekends. She helps her friend get ready for English tests. Her {4} is to be one of the top students in her class."
+        ];
+
+        const MC = MC_raw.map(l => { let parts = l.split("#"); return { q: parts[0], o: parts[1].split("/"), a: +parts[2] }; });
+        const GR = GR_raw.map(l => { let parts = l.split("#"); return { q: parts[0], a: parts[1] }; });
+        const FI = FI_raw.map(l => { let parts = l.split("|"); return { w: parts[0].split(","), a: parts[1].split(","), t: parts[2] }; });
+
+        const ch = (a, n) => { let r = []; for (let i = 0; i < a.length; i += n) r.push(a.slice(i, i + n)); return r; };
+        const G = { mc: ch(MC, 20), gr: ch(GR, 20), fi: ch(FI, 5) };
+        const norm = s => s.toLowerCase().replace(/[’‘`]/g, "'").replace(/\b(can't|cannot)\b/g, "can not").replace(/n't\b/g, " not").replace(/\bi'm\b/g, "i am").replace(/\b(it|he|she|that)'s\b/g, "$1 is").replace(/[^a-z0-9' ]/g, " ").replace(/\s+/g, " ").trim();
+        const $ = document.getElementById("app");
+        let S = {};
+        let NAME = "";
+
+        function welcome() {
+            $.innerHTML = 
+                '<div class="welcome-card">' +
+                    '<div class="ayah">إن الله وملائكته يصلون على النبي يا أيها الذين آمنوا صلوا عليه وسلموا تسليما</div>' +
+                    '<div class="teacher-name">Mr Mohamed Elshahawy</div>' +
+                    '<div class="teacher-phone">01277924562</div>' +
+                '</div>' +
+                '<p class="s" style="font-size:16px;color:var(--tx); margin-top:16px;">أهلاً بك يا بطل! اكتب اسمك للبدء:</p>' +
+                '<input id="nm" class="nm" placeholder="اكتب اسمك هنا..." autocomplete="off">' +
+                '<div style="text-align:center"><button style="width:auto;padding:12px 40px;margin-top:14px" onclick="go()">ابدأ الآن 🚀</button></div>';
+        }
+
+        function go() {
+            let v = document.getElementById("nm").value.trim();
+            if (!v) {
+                document.getElementById("nm").style.borderColor = "var(--no)";
+                return;
+            }
+            NAME = v;
+            home();
+        }
+
+        function home() {
+            if (!NAME) return welcome();
+            $.innerHTML = 
+                '<h1>🎮 Prep 1 - Units 1 & 2</h1>' +
+                '<p class="s">اختر نوع التحدي للبدء</p>' +
+                '<div class="card"><h3>🔤 تحديات الكلمات</h3><p class="s">Choose the correct answer</p>' + grid("mc") + '</div>' +
+                '<div class="card"><h3>✏️ تحديات القواعد</h3><p class="s">Rewrite the sentences</p>' + grid("gr") + '</div>' +
+                '<div class="card"><h3>🧩 أكمل القطعة</h3><p class="s">Complete the text with the words</p>' + grid("fi") + '</div>';
+        }
+
+        function grid(t) {
+            return '<div class="g">' + G[t].map((g, i) => '<button onclick="start(\'' + t + '\', ' + i + ')">جروب ' + (i + 1) + '<br><small style="color:#0369a1; font-weight:700;">' + g.length + ' ' + (t == "fi" ? "قطع" : "سؤال") + '</small></button>').join("") + '</div>';
+        }
+
+        function start(t, i) {
+            let g = G[t][i];
+            S = { t: t, i: i, qs: g, n: 0, sc: 0, done: false, max: t == "fi" ? g.length * 4 : g.length };
+            show();
+        }
+
+        function head() {
+            return '<div class="top"><span>' + (S.t == "fi" ? "قطعة" : "سؤال") + ' ' + (S.n + 1) + '/' + S.qs.length + '</span><span>⭐ ' + S.sc + '</span></div><div class="bar"><i style="width:' + (S.n / S.qs.length * 100) + '%"></i></div>';
+        }
+
+        function show() {
+            if (S.t == "fi") return showFi();
+            let q = S.qs[S.n];
+            let h = head() + '<div class="card"><div class="q">' + q.q.replace("___", "<b>_____</b>") + '</div>';
+            if (S.t == "mc") {
+                for (let i = 0; i < q.o.length; i++) {
+                    h += '<button class="o" onclick="pick(' + i + ')">' + "abcd"[i] + '. ' + q.o[i] + '</button>';
+                }
+            } else {
+                h += '<p class="s" style="margin:0 0 8px">أعد كتابة الجملة باستخدام الكلمة اللي بين الأقواس</p><input id="in" autocomplete="off" autocapitalize="off" placeholder="Type your sentence"><button onclick="chk()">تأكيد ✔️</button>';
+            }
+            $.innerHTML = h + '<div id="fb" class="fb"></div></div>';
+            let e = document.getElementById("in");
+            if (e) e.onkeydown = k => { if (k.key == "Enter") chk(); };
+        }
+
+        function showFi() {
+            let q = S.qs[S.n];
+            if (!S.pl) { S.pl = [null, null, null, null]; S.sel = null; }
+            let tx = q.t.split(/\{(\d)\}/).map((p, i) => {
+                if (i % 2 == 0) return p;
+                let k = p - 1, w = S.pl[k], c = S.done ? (w == q.a[k] ? "ok" : "no") : "";
+                return '<span class="bl ' + c + '" ondragover="event.preventDefault()" ondrop="drp(event,' + k + ')" onclick="bl(' + k + ')">' + (w || '(' + p + ' ......)') + '</span>';
+            }).join("");
+            
+            let bank = S.done ? "" : q.w.filter(w => !S.pl.includes(w)).map(w => '<span class="tl' + (S.sel == w ? " sel" : "") + '" draggable="true" ondragstart="event.dataTransfer.setData(\'text\',\'' + w + '\')" onclick="sw(\'' + w + '\')">' + w + '</span>').join("");
+            
+            let fb = "";
+            if (S.done) {
+                let c = S.pl.filter((w, k) => w == q.a[k]).length;
+                fb = '<div class="fb">' + c + '/4 ✅</div>' + (c < 4 ? '<div class="fb" dir="ltr">' + q.a.map((w, k) => (k + 1) + "." + w).join("  ") + '</div>' : '') + '<button style="margin-top:10px;" onclick="nxt()">السؤال التالي ➡️</button>';
+            } else {
+                fb = '<button onclick="chkFi()">تأكيد ✔️</button>';
+            }
+            
+            $.innerHTML = head() + '<div class="card"><p class="s">اضغط على الكلمة ثم اضغط مكانها في القطعة (أو اسحبها)</p><div class="pool" style="justify-content:center">' + bank + '</div><div class="pas">' + tx + '</div>' + fb + '</div>';
+        }
+
+        function sw(w) { S.sel = S.sel == w ? null : w; showFi(); }
+        function put(k, w) { S.pl = S.pl.map(x => x == w ? null : x); S.pl[k] = w; S.sel = null; showFi(); }
+        function bl(k) { if (S.done) return; if (S.sel) put(k, S.sel); else { S.pl[k] = null; showFi(); } }
+        function drp(e, k) { e.preventDefault(); if (!S.done) put(k, e.dataTransfer.getData('text')); }
+        function chkFi() {
+            if (S.done) return;
+            let q = S.qs[S.n];
+            S.sc += S.pl.filter((w, k) => w == q.a[k]).length;
+            S.done = true;
+            showFi();
+        }
+
+        function fin(ok, ans) {
+            if (S.done) return;
+            S.done = true;
+            if (ok) S.sc++;
+            let msg = ok ? '<span style="color:var(--ok)">✅ بطل ممتاز! إجابة صحيحة</span>' : '<span style="color:var(--no)">❌ خطأ — الإجابة: <b dir="ltr">' + ans + '</b></span>';
+            document.getElementById("fb").innerHTML = msg + '<button style="margin-top:10px;" onclick="nxt()">السؤال التالي ➡️</button>';
+        }
+
+        function pick(i) {
+            if (S.done) return;
+            let q = S.qs[S.n];
+            let btns = document.querySelectorAll(".o");
+            for (let j = 0; j < btns.length; j++) {
+                if (j == q.a) btns[j].classList.add("ok");
+                else if (j == i) btns[j].classList.add("no");
+            }
+            fin(i == q.a, q.o[q.a]);
+        }
+
+        function chk() {
+            if (S.done) return;
+            let q = S.qs[S.n], v = document.getElementById("in");
+            let ok = q.a.split("|").some(x => norm(x) == norm(v.value));
+            v.style.borderColor = ok ? "var(--ok)" : "var(--no)";
+            v.disabled = true;
+            fin(ok, q.a.split("|")[0]);
+        }
+
+        function nxt() {
+            S.done = false; S.pl = null; S.n++;
+            if (S.n < S.qs.length) show();
+            else end();
+        }
+
+        function end() {
+            let pc = Math.round(S.sc / (S.max || S.qs.length) * 100);
+            let tpNames = { mc: "Word Challenges", gr: "Rewrite Challenges", fi: "Complete the Text" };
+            let tp = tpNames[S.t] + " - Group " + (S.i + 1);
+            let msg = pc >= 90 ? "أنت بطل خارق! 🏆" : pc >= 60 ? "ممتاز جداً! 👏" : "حاول مرة أخرى، يمكنك الإبضاع! 📚";
+            let waText = "Prep 1 - Units 1 & 2 Revision\nName: " + NAME + "\nTopic: " + tp + "\nScore: " + S.sc + "/" + (S.max || S.qs.length) + " (" + pc + "%)";
+            let wa = "https://wa.me/201277924562?text=" + encodeURIComponent(waText);
+            
+            $.innerHTML = 
+                '<div class="card gold">' +
+                    '<div class="sc">' + S.sc + '/' + (S.max || S.qs.length) + '</div>' +
+                    '<h3 style="font-size:20px; color:#d97706;">' + pc + '% — ' + msg + '</h3>' +
+                    '<p class="s">' + NAME + '<br>' + tp + '</p>' +
+                '</div>' +
+                '<a class="wa" href="' + wa + '" target="_blank" rel="noopener">📲 مشاركة النتيجة عبر واتساب</a>' +
+                '<button onclick="start(\'' + S.t + '\', ' + S.i + ')">🔁 حاول مرة أخرى</button>' +
+                '<button class="link" onclick="home()">اختر موضوعاً آخر</button>';
+        }
+
+        welcome();
+    </script>
+</body>
+</html>
